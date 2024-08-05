@@ -28,45 +28,45 @@
   </a>
 </p>
 
-##### Rudetext is a animated svg text generator with a goal to make your readmes feel more alive. It's [powered by Vercel](https://vercel.com), so it can be used without hosting it yourself by accessing it with it's current domain: https://rudetext.vercel.app/api. If you wish to host it yourself, you can fork it and make /src/ a root directory in Vercel.  
+##### Rudetext - это генератор анимированных svg-текстов, цель которого - сделать ваши README более живыми.. Он [работает на Vercel](https://vercel.com), поэтому его можно использовать без собственного хостинга, обратившись к нему с текущим доменом:  https://rudetext.vercel.app/api. Если вы хотите разместить его у себя, вы можете создать форк и сделать /src/ корневым каталогом Vercel. 
 
-# ![Overview](https://rudetext.vercel.app/api?text=Overview&font=Segoe+UI&font_size=32&animation=rainbow&duration=10&height=32)
-  - [Using RUDETEXT](#using-rudetext)
+# ![Обзор](https://rudetext.vercel.app/api?text=Обзор&font=Segoe+UI&font_size=32&animation=rainbow&duration=10&height=32)
+  - [Использование RUDETEXT](#использование-rudetext)
   - [Text + SVG](#text--svg)
-    - [Customizations](#text-customizations)
-  - [Animations](#animations)
-    - [Customizations](#animation-customizations)
+    - [Кастомизации](#настройки-текста)
+  - [Анимации](#анимации)
+    - [Кастомизации](#настройки-анимации)
 
-# Using RUDETEXT
-To use RUDETEXT in markdown, you use markdown's `![alt text](image)`. For example, `![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=16&width=96&dominant_baseline=auto)` shows up as ![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=16&width=96&dominant_baseline=auto). Query parameters are separated by `&`. Spaces can be added with `+` or `%20`. + sign can be added with `%2b`. So, you should consider escaping your strings before using them in RUDETEXT.
+# Использование RUDETEXT
+Чтобы использовать RUDETEXT в разметке, вы используете `![alt text](image)`. Например, `![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=16&width=96&dominant_baseline=auto)` отображается как ![Rainbow Text](https://rudetext.vercel.app/api?text=Rainbow+Text&animation=rainbow&height=16&width=96&dominant_baseline=auto). Параметры запроса разделяются символом `&`. Пробелы могут быть добавлены с помощью `+` или `%20`. Знак + может быть добавлен с помощью `%2b`. Поэтому перед использованием строк в RUDETEXT их следует экранировать.
   
 # Text + SVG
-Text can be passed to RUDETEXT by using `text` query parameter.  
-As RUDETEXT cannot access DOM to calculate text width and height, default SVG sizes are `width = font_size * (text.length + 2) / 2` and `height = font_size * 1.5`.  
-You can set your width and height in pixels manually by passing the `width` and `height` query parameters.  
+Текст может быть передан RUDETEXT с помощью параметра запроса `text`.  
+Поскольку RUDETEXT не может получить доступ к DOM для расчета ширины и высоты текста, дефолтные размеры SVG равны `width = font_size * (text.length + 2) / 2` and `height = font_size * 1.5`.  
+Вы можете задать ширину и высоту в пикселях вручную, передав параметры запроса `width` и `height`.    
   
-# Text customizations
-`text_color` - Text color in RGB HEX. (#FFFFFF by default)  
-`font` - Font of the text. Is a string. (`Segoe UI` by default)  
-`font_size` - Font size of the text in pixels. (16 by default)  
-`anchor` - Anchor of the text. `start`, `middle`, `end` etc. (`start` by default)  
-`dominant_baseline` - dominant baseline of the text. `auto`, `middle`, `hanging`. (`middle` by default.)
+# Настройки текста
+`text_color` - Цвет текста в RGB HEX. (по умолчанию #FFFFFF)  
+`font` - Шрифт текста. Является строкой (string). (по умолчанию `Segoe UI`)  
+`font_size` - Размер шрифта текста в пикселях. (16 по умолчанию)  
+`anchor` - Привязка текста. `start`, `middle`, `end` и т. д. (по умолчанию `start`)  
+`dominant_baseline` - доминирующая базовая линия текста. `авто`, `средняя`, `висячая`. (по умолчанию `средняя`).
   
-# Animations
-There are multiple animations in RUDETEXT. You can choose the animation by passing `animation` query parameter.  
+# Анимации
+В RUDETEXT существует множество анимаций. Вы можете выбрать анимацию, передав параметр запроса `animation`.  
 
-Oneshot animations: `fall`.  
-Repeating animations: `rainbow`.  
+Одноразовые анимации: `fall`.  
+Цикличные анимации: `rainbow`.  
   
-`fall` animation example:  
+`fall` пример анимации:  
 `![RAHH!!](https://rudetext.vercel.app/api?text=RAHH!!&animation=fall&iteration_count=infinite&dominant_baseline=hanging)`  
 ![RAHH!!](https://rudetext.vercel.app/api?text=RAHH!!&animation=fall&iteration_count=infinite&dominant_baseline=hanging)  
 
-`rainbow` animation example:  
+`rainbow` пример анимации:  
 `![Rainbowy Rainbows :3](https://rudetext.vercel.app/api?text=Rainbowy+Rainbows+:3&animation=rainbow&duration=3)`  
 ![Rainbowy Rainbows :3](https://rudetext.vercel.app/api?text=Rainbowy+Rainbows+:3&animation=rainbow&duration=3)  
 
-# Animation customizations
-`delay` - Delay of the animation. Can be used to "chain" multiple RUDETEXT SVGs. (`0` by default)  
-`duration` - Duration of the animation in seconds. Can be used to speed up or slow down animations. (`0.5` by default)  
-`iteration_count` - Number of times the animation is repeated. Can be `infinite` to loop it forever. (`1` for oneshot animations, `infinite` for repeating animations by default)
+# Настройки анимации
+`delay` - Задержка анимации. Может использоваться для "цепочки" нескольких SVG RUDETEXT. (`0` по умолчанию)  
+`duration` - Продолжительность анимации в секундах. Может использоваться для ускорения или замедления анимации. (`0.5` по умолчанию)  
+`iteration_count` - Количество повторений анимации. Может быть `бесконечным`, чтобы зациклить ее навсегда. (`1` для однократной анимации, `infinite` для повторяющейся анимации по умолчанию)
